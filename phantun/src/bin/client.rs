@@ -71,7 +71,7 @@ async fn main() -> io::Result<()> {
                 .required(false)
                 .help("Only use IPv4 address when connecting to remote")
                 .action(ArgAction::SetTrue)
-                .conflicts_with_all(&["tun_local6", "tun_peer6"]),
+                .conflicts_with_all(["tun_local6", "tun_peer6"]),
         )
         .arg(
             Arg::new("tun_local6")
@@ -153,12 +153,11 @@ async fn main() -> io::Result<()> {
 
     let tun = TunBuilder::new()
         .name(tun_name) // if name is empty, then it is set by kernel.
-        .tap(false) // false (default): TUN, true: TAP.
-        .packet_info(false) // false: IFF_NO_PI, default is true.
         .up() // or set it up manually using `sudo ip link set <tun-name> up`.
         .address(tun_local)
         .destination(tun_peer)
-        .try_build_mq(num_cpus)
+        .queues(num_cpus)
+        .build()
         .unwrap();
 
     if remote_addr.is_ipv6() {

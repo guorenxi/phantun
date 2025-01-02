@@ -35,7 +35,7 @@ Table of Contents
 
 # Latest release
 
-[v0.6.0](https://github.com/dndx/phantun/releases/tag/v0.6.0)
+[v0.7.0](https://github.com/dndx/phantun/releases/tag/v0.7.0)
 
 # Overview
 
@@ -262,7 +262,7 @@ is the following (using IPv4 below as an example):
 Note that Phantun does not add any additional header other than IP and TCP headers in order to pass through
 stateful packet inspection!
 
-Phantun's additional overhead: `12 bytes`. I other words, when using Phantun, the usable payload for
+Phantun's additional overhead: `12 bytes`. In other words, when using Phantun, the usable payload for
 UDP packet is reduced by 12 bytes. This is the minimum overhead possible when doing such kind
 of obfuscation.
 
@@ -368,7 +368,7 @@ Here is a quick overview of comparison between those two to help you choose:
 
 # License
 
-Copyright 2021-2022 Datong Sun (dndx@idndx.com)
+Copyright 2021-2024 Datong Sun (dndx@idndx.com)
 
 Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
 [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)> or the MIT license
